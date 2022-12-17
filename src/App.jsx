@@ -1,13 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import React from 'react'
 import './App.css'
+import Die from './components/Die'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [dice, setDice] = React.useState([1,1,1,1,1,1,1,1,1,1])
 
   return (
-    <div className="App">
-      <h1>i got it now</h1>
+    <div className="App flex">
+      <div className="game-square flex">
+        <h1>Tenzies</h1>
+        <p>Roll until all dice are the same. Click each die to freez it at its current value between rolls</p>
+      
+          <Die />
+        
+      <button className='roll-button'>Roll</button>
+      </div>
     </div>
   )
 }
